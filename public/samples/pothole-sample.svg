@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <!-- Asphalt asphalt texture filter -->
+    <filter id="asphalt-noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise" />
+      <feColorMatrix type="matrix" values="0.25 0 0 0 0.12  0 0.25 0 0 0.14  0 0 0.25 0 0.17  0 0 0 1 0" />
+    </filter>
+    <radialGradient id="pothole-depth" cx="48%" cy="52%" r="55%" fx="42%" fy="45%">
+      <stop offset="0%" stop-color="#05070a" />
+      <stop offset="60%" stop-color="#141923" />
+      <stop offset="85%" stop-color="#242b38" />
+      <stop offset="100%" stop-color="#3b4455" />
+    </radialGradient>
+    <linearGradient id="road-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f2735" />
+      <stop offset="100%" stop-color="#151b26" />
+    </linearGradient>
+  </defs>
+
+  <!-- Road base -->
+  <rect width="800" height="600" fill="url(#road-grad)" />
+  <rect width="800" height="600" filter="url(#asphalt-noise)" opacity="0.35" />
+
+  <!-- Road markings -->
+  <line x1="120" y1="0" x2="120" y2="600" stroke="#facc15" stroke-width="8" opacity="0.8" />
+  <line x1="680" y1="0" x2="680" y2="600" stroke="#ffffff" stroke-width="6" opacity="0.75" />
+  <line x1="400" y1="20" x2="400" y2="120" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+  <line x1="400" y1="180" x2="400" y2="280" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+  <line x1="400" y1="340" x2="400" y2="440" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+  <line x1="400" y1="500" x2="400" y2="600" stroke="#ffffff" stroke-width="8" stroke-linecap="round" opacity="0.7" />
+
+  <!-- Minor surface wear -->
+  <path d="M 220,150 Q 250,180 230,220 T 260,280" stroke="#0e131d" stroke-width="2" fill="none" opacity="0.6" />
+  <path d="M 520,380 Q 560,410 540,460" stroke="#0e131d" stroke-width="2.5" fill="none" opacity="0.6" />
+
+  <!-- Main Pothole Distress Area (Around center-right: x:420-600, y:220-390) -->
+  <!-- Outer crumbling edge -->
+  <path d="M 430,280 C 420,240 470,220 520,225 C 570,230 615,260 610,310 C 605,360 560,390 505,385 C 455,380 435,340 430,280 Z" 
+        fill="#232a38" stroke="#374151" stroke-width="4" opacity="0.9" />
+  <!-- Deep inner cavity -->
+  <path d="M 450,285 C 440,250 480,235 525,240 C 565,245 595,270 590,310 C 585,345 550,370 505,365 C 465,360 450,330 450,285 Z" 
+        fill="url(#pothole-depth)" />
+  <!-- Loose debris pebbles -->
+  <circle cx="475" cy="265" r="4" fill="#4b5563" />
+  <circle cx="535" cy="255" r="6" fill="#374151" />
+  <circle cx="560" cy="320" r="5" fill="#4b5563" />
+  <circle cx="490" cy="340" r="7" fill="#374151" />
+  <circle cx="445" cy="310" r="3" fill="#6b7280" />
+  <circle cx="575" cy="275" r="4" fill="#4b5563" />
+
+  <!-- Radial stress fissures around pothole -->
+  <path d="M 430,280 L 390,270 L 370,290" stroke="#0b0e14" stroke-width="2" fill="none" />
+  <path d="M 520,225 L 530,185 L 515,160" stroke="#0b0e14" stroke-width="2.5" fill="none" />
+  <path d="M 610,310 L 650,325 L 670,315" stroke="#0b0e14" stroke-width="2" fill="none" />
+  <path d="M 505,385 L 515,430 L 495,460" stroke="#0b0e14" stroke-width="3" fill="none" />
+
+  <!-- Secondary Alligator crack cluster nearby (x:200-340, y:360-480) -->
+  <g stroke="#090d14" stroke-width="2.5" fill="none" opacity="0.85">
+    <polygon points="230,380 270,375 285,405 255,425 220,410" />
+    <polygon points="270,375 315,370 330,400 285,405" />
+    <polygon points="285,405 330,400 340,435 295,445 255,425" />
+    <polygon points="255,425 295,445 280,480 235,465 220,440" />
+    <path d="M 230,380 L 195,375 M 315,370 L 350,355 M 280,480 L 290,515" />
+  </g>
+</svg>

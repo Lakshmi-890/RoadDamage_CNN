@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <filter id="road-grain" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="0.3 0 0 0 0.12  0 0.3 0 0 0.14  0 0 0.3 0 0.18  0 0 0 1 0" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="600" fill="#1b222f" />
+  <rect width="800" height="600" filter="url(#road-grain)" opacity="0.32" />
+
+  <!-- Road lane divider center line -->
+  <line x1="140" y1="0" x2="140" y2="600" stroke="#ffffff" stroke-width="6" opacity="0.65" />
+  <line x1="700" y1="0" x2="700" y2="600" stroke="#facc15" stroke-width="6" opacity="0.75" />
+
+  <!-- Longitudinal Crack running along wheel path: x:320-360, y:20 to 580 -->
+  <path d="M 345,10 Q 338,70 342,120 T 350,210 T 335,290 T 348,380 T 339,470 T 355,590" 
+        stroke="#070a0f" stroke-width="4.5" fill="none" stroke-linecap="round" />
+  <!-- Parallel spalling and micro-fissures -->
+  <path d="M 342,120 L 325,145 L 315,140" stroke="#090d14" stroke-width="2" fill="none" />
+  <path d="M 335,290 L 365,305 L 375,325" stroke="#090d14" stroke-width="2.5" fill="none" />
+  <path d="M 348,380 L 320,395 L 305,420" stroke="#090d14" stroke-width="2" fill="none" />
+
+  <!-- Transverse Crack cutting across perpendicularly: y:240-270, x:180 to 650 -->
+  <path d="M 180,260 Q 260,252 335,258 T 460,248 T 580,255 T 650,245" 
+        stroke="#080c13" stroke-width="4" fill="none" stroke-linecap="round" />
+  <!-- Transverse micro-branch -->
+  <path d="M 460,248 L 475,220 L 490,215" stroke="#0a0e16" stroke-width="2" fill="none" />
+  <path d="M 580,255 L 595,285" stroke="#0a0e16" stroke-width="2" fill="none" />
+</svg>
