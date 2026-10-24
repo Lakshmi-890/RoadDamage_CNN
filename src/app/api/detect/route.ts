@@ -99,7 +99,6 @@ export async function POST(req: NextRequest) {
       result = await client.predict('/predict', {
         image: file,
         confidence: conf,
-        conf_threshold: conf,
       });
       console.log('[API /api/detect] Model inference completed successfully');
     } catch (predictErr: unknown) {
